@@ -90,7 +90,7 @@ router.post('/', async (request, env) => {
 			  data: {
 				content: "something is wrong"
 			  },
-			}
+			});
 		}
       }
 	  
