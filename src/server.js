@@ -77,16 +77,17 @@ router.post('/', async (request, env) => {
 			
 			return new JsonResponse({
 			  type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-			  flags: 1 << 6, 
+			  flags: InteractionResponseFlags.EPHEMERAL,
 			  data: {
 				content: "Thank you for joining our game!"
 			  },
 			});				
 		} catch (e) {
+			console.error("--- something has gone wrong ---");
 			console.error(e);
 			return new JsonResponse({
 			  type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-			  flags: 1 << 6, 
+			  flags: InteractionResponseFlags.EPHEMERAL,
 			  data: {
 				content: "something is wrong"
 			  },
