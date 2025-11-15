@@ -1,4 +1,4 @@
-import { AWW_COMMAND, INVITE_COMMAND } from './commands.js';
+import { FLIP_COMMAND, JOIN_COMMAND, KICK_COMMAND, BALANCE_COMMAND, TRANSFER_COMMAND } from './commands.js';
 import dotenv from 'dotenv';
 import process from 'node:process';
 
@@ -34,7 +34,7 @@ const response = await fetch(url, {
     Authorization: `Bot ${token}`,
   },
   method: 'PUT',
-  body: JSON.stringify([AWW_COMMAND, INVITE_COMMAND]),
+  body: JSON.stringify([FLIP_COMMAND, JOIN_COMMAND, KICK_COMMAND, BALANCE_COMMAND, TRANSFER_COMMAND]),
 });
 
 if (response.ok) {
