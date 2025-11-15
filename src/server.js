@@ -2,7 +2,6 @@
  * The core server that runs on a Cloudflare worker.
  */
 
-require('dotenv').config();
 import { AutoRouter } from 'itty-router';
 import {
   InteractionResponseType,
