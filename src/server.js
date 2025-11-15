@@ -73,12 +73,12 @@ router.post('/', async (request, env) => {
 	  case JOIN_COMMAND.name.toLowerCase(): {
 		try {
 			let user_id = interaction.member.user.id
-			await add_new_player(user_id)
+			await add_new_player(user_id, env)
 			
 			return new JsonResponse({
 			  type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-			  flags: InteractionResponseFlags.EPHEMERAL,
 			  data: {
+				flags: InteractionResponseFlags.EPHEMERAL,
 				content: "Thank you for joining our game!"
 			  },
 			});				
@@ -87,8 +87,8 @@ router.post('/', async (request, env) => {
 			console.error(e);
 			return new JsonResponse({
 			  type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-			  flags: InteractionResponseFlags.EPHEMERAL,
 			  data: {
+				flags: InteractionResponseFlags.EPHEMERAL,
 				content: "something is wrong"
 			  },
 			});
