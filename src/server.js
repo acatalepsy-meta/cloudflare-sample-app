@@ -9,7 +9,7 @@ import {
   verifyKey,
 } from 'discord-interactions';
 import { FLIP_COMMAND, JOIN_COMMAND, KICK_COMMAND, BALANCE_COMMAND, TRANSFER_COMMAND } from './commands.js';
-import { getCuteUrl } from './reddit.js';
+import { fetch_all_players, add_new_player } from './players.js'; 
 import { InteractionResponseFlags } from 'discord-interactions';
 
 class JsonResponse extends Response {
@@ -56,7 +56,9 @@ router.post('/', async (request, env) => {
   }
 
   if (interaction.type === InteractionType.APPLICATION_COMMAND) {
-    // Most user commands will come as `APPLICATION_COMMAND`.
+    console.log(interaction); 
+	
+	// Most user commands will come as `APPLICATION_COMMAND`.
     switch (interaction.data.name.toLowerCase()) {
       case FLIP_COMMAND.name.toLowerCase(): {
 		let flip = Math.random() > 0.5 ? "Heads!" : "Tails!"; 
@@ -66,6 +68,30 @@ router.post('/', async (request, env) => {
             content: flip
           },
         });
+      }
+	  
+	  case JOIN_COMMAND.name.toLowerCase(): {
+		try {
+			let user_id = interaction.member.user.id
+			await add_new_player(user_id)
+			
+			return new JsonResponse({
+			  type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+			  flags: 1 << 6, 
+			  data: {
+				content: "Thank you for joining our game!"
+			  },
+			});				
+		} catch (e) {
+			console.log("oh no!");
+			return new JsonResponse({
+			  type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+			  flags: 1 << 6, 
+			  data: {
+				content: "something is wrong"
+			  },
+			}
+		}
       }
 	  
       default:
