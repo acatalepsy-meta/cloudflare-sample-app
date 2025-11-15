@@ -9,7 +9,7 @@ import {
   verifyKey,
 } from 'discord-interactions';
 import { FLIP_COMMAND, JOIN_COMMAND, KICK_COMMAND, BALANCE_COMMAND, TRANSFER_COMMAND } from './commands.js';
-import { fetch_all_players, add_new_player } from './players.js'; 
+//import { fetch_all_players, add_new_player } from './players.js'; 
 import { InteractionResponseFlags } from 'discord-interactions';
 
 class JsonResponse extends Response {

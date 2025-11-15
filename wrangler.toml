@@ -4,6 +4,13 @@ compatibility_flags = [ "nodejs_compat" ]
 
 compatibility_date="2024-09-24"
 
+[observability]
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+invocation_logs = true
+persist = true
+
 # [secrets]
 # DISCORD_TOKEN
 # DISCORD_PUBLIC_KEY
