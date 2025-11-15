@@ -83,7 +83,7 @@ router.post('/', async (request, env) => {
 			  },
 			});				
 		} catch (e) {
-			console.log("oh no!");
+			console.error(e);
 			return new JsonResponse({
 			  type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
 			  flags: 1 << 6, 
