@@ -1,13 +1,9 @@
-type PlayerRow = {
-    discord_id: string;
-    credits: number;
-};
 
 export fetch_all_players {
   async fetch(request, env) {
     const result = await env.MY_DB.prepare(
         "SELECT discord_id, credits FROM [players]",
-    ).run<PlayerRow>();
+    ).run();
     return new Response(JSON.stringify(result));
   }
 }
