@@ -94,12 +94,12 @@ router.post('/', async (request, env) => {
 			});
 		}
       }
-	  
+*/ 
       default:
         return new JsonResponse({ error: 'Unknown Type' }, { status: 400 });
     }
   }
-*/
+
   console.error('Unknown Type');
   return new JsonResponse({ error: 'Unknown Type' }, { status: 400 });
 });
