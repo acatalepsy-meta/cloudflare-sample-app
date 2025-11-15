@@ -1,4 +1,4 @@
-name = "sambot"
+name = "sam-bot"
 main = "./src/server.js"
 compatibility_flags = [ "nodejs_compat" ]
 
