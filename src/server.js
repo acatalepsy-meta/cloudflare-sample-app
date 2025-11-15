@@ -69,7 +69,8 @@ router.post('/', async (request, env) => {
           },
         });
       }
-	  
+
+/*	  
 	  case JOIN_COMMAND.name.toLowerCase(): {
 		try {
 			let user_id = interaction.member.user.id
@@ -98,7 +99,7 @@ router.post('/', async (request, env) => {
         return new JsonResponse({ error: 'Unknown Type' }, { status: 400 });
     }
   }
-
+*/
   console.error('Unknown Type');
   return new JsonResponse({ error: 'Unknown Type' }, { status: 400 });
 });
