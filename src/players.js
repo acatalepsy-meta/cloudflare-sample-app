@@ -1,3 +1,4 @@
+/*
 
 async function fetch_all_players() {
     const result = await env.MY_DB.prepare(
@@ -17,3 +18,5 @@ export {
 	fetch_all_players,
 	add_new_player
 }
+
+*/
