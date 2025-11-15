@@ -13,7 +13,7 @@ async function add_new_player(discord_id) {
 	return new Response(JSON.stringify(result));
 }
 
-module.exports = {
+export {
 	fetch_all_players,
 	add_new_player
 }
