@@ -9,7 +9,7 @@ import {
   verifyKey,
 } from 'discord-interactions';
 import { FLIP_COMMAND, JOIN_COMMAND, KICK_COMMAND, BALANCE_COMMAND, TRANSFER_COMMAND } from './commands.js';
-//import { fetch_all_players, add_new_player } from './players.js'; 
+import { fetch_all_players, add_new_player } from './players.js'; 
 import { InteractionResponseFlags } from 'discord-interactions';
 
 class JsonResponse extends Response {
@@ -69,8 +69,7 @@ router.post('/', async (request, env) => {
           },
         });
       }
-
-/*	  
+ 
 	  case JOIN_COMMAND.name.toLowerCase(): {
 		try {
 			let user_id = interaction.member.user.id
@@ -94,7 +93,7 @@ router.post('/', async (request, env) => {
 			});
 		}
       }
-*/ 
+	  
       default:
         return new JsonResponse({ error: 'Unknown Type' }, { status: 400 });
     }

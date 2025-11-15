@@ -1,5 +1,3 @@
-/*
-
 async function fetch_all_players() {
     const result = await env.SAM_BOT_BINDING.prepare(
         "SELECT discord_id, credits FROM [players]",
@@ -18,5 +16,3 @@ export {
 	fetch_all_players,
 	add_new_player
 }
-
-*/
